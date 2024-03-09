@@ -37,7 +37,7 @@ public class label {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500,500);
         frame.setVisible(true);
-       // frame.setLayout(null); // to fx the lable at a particular position
+       //frame.setLayout(null); // to fx the lable at a particular position
         frame.setTitle("lets code");
         frame.add(label);
         
