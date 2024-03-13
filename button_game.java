@@ -89,7 +89,7 @@ public class button_game extends JFrame implements ActionListener {
             button3.setEnabled(false);
         }
         else if(e.getSource() == button2){
-            System.out.println("im working");
+            System.out.println("im working but the panel is not");
             button2.setEnabled(false);
             panel.setVisible(true);
         }
