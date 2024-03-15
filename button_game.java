@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+
 
 public class button_game extends JFrame implements ActionListener {
     
@@ -58,7 +58,7 @@ public class button_game extends JFrame implements ActionListener {
        
         
         label1 = new JLabel();
-        label1.setText("<html>LETS START THE ADVENTURE!<br/>I hope the odds are in your favour fighter!");
+        label1.setText("<html>LETS START THE ADVENTURE!<br/>I hope the odds are in your favour fighter!</html>");
         label1.setHorizontalTextPosition(JLabel.CENTER);
         label1.setVerticalTextPosition(JLabel.CENTER);
         label1.setBounds(100, 150, 300, 100); 
