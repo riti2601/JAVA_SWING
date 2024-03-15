@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class button_game extends JFrame implements ActionListener {
     
@@ -37,8 +38,8 @@ public class button_game extends JFrame implements ActionListener {
         footer = new JPanel();
         header.setBackground(Color.yellow);
         header.setPreferredSize(new Dimension(100,100));
-        footer.setBackground(Color.LIGHT_GRAY);
-        header.setPreferredSize(new Dimension(100,100));
+        footer.setBackground(Color.BLACK);
+        footer.setPreferredSize(new Dimension(100,100));
 
 
 
@@ -87,7 +88,7 @@ public class button_game extends JFrame implements ActionListener {
         panel.add(game);
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(null); 
+        //this.setLayout(null); 
         this.setSize(500,500);
         this.setVisible(true);
         this.add(header, BorderLayout.NORTH);
