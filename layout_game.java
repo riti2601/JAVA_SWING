@@ -35,12 +35,13 @@ public class layout_game extends JFrame implements ActionListener{
     no.addActionListener(this);
 
     proceed = new JButton();
-    proceed.setBounds(100,100,100,100);
     proceed.setFocusable(false);
     proceed.setText("<html><h2>PROCEED TO THE DUNGEON</h2><h3>LETS START THE ADVENTURE!<br/>I hope the odds are in your favour fighter!<h3></html>");
     proceed.setVisible(false);
     proceed.setBackground(Color.BLACK);
     proceed.setForeground(Color.WHITE);
+    proceed.addActionListener(this);
+
 
     this.add(yes);
     this.add(no);
@@ -90,7 +91,7 @@ public class layout_game extends JFrame implements ActionListener{
     panel5.setLayout(new BorderLayout());
     panel4.add(yes);
     panel3.add(no);
-    panel5.add(proceed);
+    panel5.add(proceed, BorderLayout.SOUTH);
     panel1.add(label1);
     panel2.add(label2);
     panel5.add(label5, BorderLayout.NORTH);
@@ -114,6 +115,10 @@ public class layout_game extends JFrame implements ActionListener{
         }
         else if(e.getSource()==no){
             System.out.println("NO");
+        }
+        else if(e.getSource()==proceed){
+            proceed.setEnabled(false);
+            System.out.println("proceed");
         }
     }
     
