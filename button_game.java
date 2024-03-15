@@ -1,5 +1,7 @@
 package JAVA_SWING;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -17,8 +19,11 @@ public class button_game extends JFrame implements ActionListener {
     JLabel label1;
     JPanel homePanel;
     JPanel panel;
+    JPanel header;
+    JPanel footer;
 
     button_game(){
+        this.setLayout(new BorderLayout());
 
         homePanel = new JPanel();
         homePanel.setLayout(null); // Set layout to null for manual positioning
@@ -28,10 +33,20 @@ public class button_game extends JFrame implements ActionListener {
         panel.setBackground(Color.BLACK);
         panel.setVisible(false);
 
+        header = new JPanel();
+        footer = new JPanel();
+        header.setBackground(Color.yellow);
+        header.setPreferredSize(new Dimension(100,100));
+        footer.setBackground(Color.LIGHT_GRAY);
+        header.setPreferredSize(new Dimension(100,100));
+
+
+
         label = new JLabel();
         label.setText("<html>WELCOME TO THE DUNGEON!! <br/> ---------------------------------------------<br/>Do you want to enter the dungeon?</html>");
         label.setBounds(100,0,700,100);
-        homePanel.add(label);
+        header.add(label);
+        //homePanel.add(label);
                 
         button1 = new JButton();
         button1.setBounds(50, 100, 100, 50);
@@ -75,6 +90,8 @@ public class button_game extends JFrame implements ActionListener {
         this.setLayout(null); 
         this.setSize(500,500);
         this.setVisible(true);
+        this.add(header, BorderLayout.NORTH);
+        this.add(footer, BorderLayout.SOUTH);
         this.add(homePanel); 
         this.add(panel);
     }
