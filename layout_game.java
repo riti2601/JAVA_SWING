@@ -23,7 +23,7 @@ public class layout_game extends JFrame implements ActionListener{
     yes.setBounds(0,0,60,500);
     yes.setText("<html><h2>YES</h2></html>");
     yes.setFocusable(false);
-    yes.setBackground(Color.GREEN);
+    yes.setBackground( new Color(0,100,30));
     yes.addActionListener(this);
 
     //button for no
@@ -31,14 +31,14 @@ public class layout_game extends JFrame implements ActionListener{
     no.setBounds(0,0,60,500);
     no.setText("<html><h2>NO</h2></html>");
     no.setFocusable(false);
-    no.setBackground(Color.RED);
+    no.setBackground( new Color(100,0,30));
     no.addActionListener(this);
 
     proceed = new JButton();
     proceed.setFocusable(false);
     proceed.setText("<html><h2>PROCEED TO THE DUNGEON</h2><h3>LETS START THE ADVENTURE!<br/>I hope the odds are in your favour fighter!<h3></html>");
     proceed.setVisible(false);
-    proceed.setBackground(Color.BLACK);
+    proceed.setBackground(Color.DARK_GRAY);
     proceed.setForeground(Color.WHITE);
     proceed.addActionListener(this);
 
