@@ -16,6 +16,8 @@ public class layout_game extends JFrame implements ActionListener{
     static JButton yes;
     static JButton no;
     static JButton proceed;
+    static JPanel panel5; 
+    static JPanel panel6;
 
     layout_game(){
     //button for yes
@@ -62,7 +64,7 @@ public class layout_game extends JFrame implements ActionListener{
     JPanel panel2 = new JPanel();
     JPanel panel3 = new JPanel();
     JPanel panel4 = new JPanel();
-    JPanel panel5 = new JPanel();
+    panel5 = new JPanel();
 
     //label for header, footer, center
     JLabel label1 = new JLabel("<html><h1>DUNGEON AWAITS</h1></html>");
@@ -119,6 +121,7 @@ public class layout_game extends JFrame implements ActionListener{
         else if(e.getSource()==proceed){
             proceed.setEnabled(false);
             System.out.println("proceed");
+            panel5.setVisible(false);
         }
     }
     
