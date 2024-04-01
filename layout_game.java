@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +21,9 @@ public class layout_game extends JFrame implements ActionListener{
     static JPanel panel5; 
     static JPanel panel6;
     static JFrame frame;
+    static JButton one;
+    static JButton two;
+    String enemy;
 
     layout_game(JFrame frame){
     this.frame = frame;
@@ -38,6 +43,25 @@ public class layout_game extends JFrame implements ActionListener{
     no.setBackground( new Color(100,0,30));
     no.addActionListener(this);
 
+    //button for 1
+    one = new JButton();
+    one.setBounds(0,0,60,500);
+    one.setText("<html><h2>1</h2></html>");
+    one.setFocusable(false);
+    one.setBackground( new Color(0,100,30));
+    one.addActionListener(this);
+    one.setVisible(false);
+
+    //button for 2
+    two = new JButton();
+    two.setBounds(0,0,60,500);
+    two.setText("<html><h2>2</h2></html>");
+    two.setFocusable(false);
+    two.setBackground( new Color(100,0,30));
+    two.addActionListener(this);
+    two.setVisible(false);
+
+
     proceed = new JButton();
     proceed.setFocusable(false);
     proceed.setText("<html><h2>PROCEED TO THE DUNGEON</h2><h3>LETS START THE ADVENTURE!<br/>I hope the odds are in your favour fighter!<h3></html>");
@@ -50,6 +74,7 @@ public class layout_game extends JFrame implements ActionListener{
     this.add(yes);
     this.add(no);
     this.add(proceed);
+    this.add(one);
     }
 
     public static void main(String[] args) {
@@ -75,7 +100,8 @@ public class layout_game extends JFrame implements ActionListener{
     JLabel label2 = new JLabel("<html><h2>CREATED BY: RITISHA PANDE</h2></html>");
     label2.setForeground(Color.BLACK);
     JLabel label5 = new JLabel("<html><h1>WELCOME TO THE DUNGEON!</h1><br><h2>DO YOU WANT TO ENTER THE DUNGEON?<br>Click on the either side of the screen.</h2></html>");
-
+    JLabel label3 = new JLabel("<html><h1>YOU HAVE ENTERED THE DUNGEON!</h1><br>"+enemy+"<h1>has appeared.</h1><br><h2>What would you like to do?<br>1. ATTACK 2.RUN <br>Click on the either side of the screen.</h2></html>");
+    label3.setForeground(Color.WHITE);
     
 
     //colors to panels
@@ -100,11 +126,13 @@ public class layout_game extends JFrame implements ActionListener{
     panel6.setLayout(new BorderLayout());
     panel4.add(yes);
     panel3.add(no);
+    panel4.add(one);
+    panel3.add(two);
     panel5.add(proceed, BorderLayout.SOUTH);
     panel1.add(label1);
     panel2.add(label2);
     panel5.add(label5, BorderLayout.NORTH);
-
+    panel6.add(label3);
 
 
     //adding panels to frame
@@ -132,6 +160,31 @@ public class layout_game extends JFrame implements ActionListener{
             panel5.setVisible(false);
             frame.add(panel6, BorderLayout.CENTER);
             panel6.setVisible(true);
+            yes.setVisible(false);
+            no.setVisible(false);
+            one.setVisible(true);
+            two.setVisible(true);
+            Random rand = new Random();
+            //game variables
+            String[] enemies = {"Skeleton", "Zombie", "Warrior", "Assassin", "Knight", "Vampire"};
+            int maxEnemyHealth = 80;
+            int enemyAttackDamage = 25;
+
+            //player variables
+            int health = 100;
+            int attackDamage = 30;
+            int numHealthPots = 3;
+            int healthPotionHealAmt = 30;
+            int healthPotionDropChance = 50; //percentage of having chance of having potion
+
+            
+            int enemyHealth = rand.nextInt(maxEnemyHealth);
+            enemy = enemies[rand.nextInt(enemies.length)];
+
+            
+        }
+        else if(e.getSource()==one){
+            System.out.println("We attack");
         }
     }
     
