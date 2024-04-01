@@ -18,8 +18,10 @@ public class layout_game extends JFrame implements ActionListener{
     static JButton proceed;
     static JPanel panel5; 
     static JPanel panel6;
+    static JFrame frame;
 
-    layout_game(){
+    layout_game(JFrame frame){
+    this.frame = frame;
     //button for yes
     yes = new JButton();
     yes.setBounds(0,0,60,500);
@@ -53,7 +55,7 @@ public class layout_game extends JFrame implements ActionListener{
     public static void main(String[] args) {
 
     //frame creation
-    JFrame frame = new JFrame();
+    frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(600,600);
     frame.setLayout(new BorderLayout(5,5));
@@ -65,6 +67,7 @@ public class layout_game extends JFrame implements ActionListener{
     JPanel panel3 = new JPanel();
     JPanel panel4 = new JPanel();
     panel5 = new JPanel();
+    panel6 = new JPanel();
 
     //label for header, footer, center
     JLabel label1 = new JLabel("<html><h1>DUNGEON AWAITS</h1></html>");
@@ -73,11 +76,13 @@ public class layout_game extends JFrame implements ActionListener{
     label2.setForeground(Color.BLACK);
     JLabel label5 = new JLabel("<html><h1>WELCOME TO THE DUNGEON!</h1><br><h2>DO YOU WANT TO ENTER THE DUNGEON?<br>Click on the either side of the screen.</h2></html>");
 
+    
 
     //colors to panels
     panel1.setBackground(Color.BLACK);
     panel2.setBackground(Color.DARK_GRAY);
     panel5.setBackground(Color.LIGHT_GRAY);
+    panel6.setBackground(Color.BLACK);
 
     //size of panels 
     panel1.setPreferredSize(new Dimension(100,50));
@@ -85,12 +90,14 @@ public class layout_game extends JFrame implements ActionListener{
     panel3.setPreferredSize(new Dimension(60,100));
     panel4.setPreferredSize(new Dimension(60,100));
     panel5.setPreferredSize(new Dimension(100,100));
+    panel6.setPreferredSize(new Dimension(100,100));
 
-    new layout_game();
+    new layout_game(frame);
     //adding components to panel
     panel3.setLayout(new BorderLayout());
     panel4.setLayout(new BorderLayout());
     panel5.setLayout(new BorderLayout());
+    panel6.setLayout(new BorderLayout());
     panel4.add(yes);
     panel3.add(no);
     panel5.add(proceed, BorderLayout.SOUTH);
@@ -106,7 +113,8 @@ public class layout_game extends JFrame implements ActionListener{
     frame.add(panel3, BorderLayout.EAST);
     frame.add(panel4, BorderLayout.WEST);
     frame.add(panel5, BorderLayout.CENTER);
-
+    
+    panel6.setVisible(false);
     }
 
     @Override
@@ -122,6 +130,8 @@ public class layout_game extends JFrame implements ActionListener{
             proceed.setEnabled(false);
             System.out.println("proceed");
             panel5.setVisible(false);
+            frame.add(panel6, BorderLayout.CENTER);
+            panel6.setVisible(true);
         }
     }
     
