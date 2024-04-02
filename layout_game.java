@@ -100,7 +100,7 @@ public class layout_game extends JFrame implements ActionListener{
     JLabel label2 = new JLabel("<html><h2>CREATED BY: RITISHA PANDE</h2></html>");
     label2.setForeground(Color.BLACK);
     JLabel label5 = new JLabel("<html><h1>WELCOME TO THE DUNGEON!</h1><br><h2>DO YOU WANT TO ENTER THE DUNGEON?<br>Click on the either side of the screen.</h2></html>");
-    JLabel label3 = new JLabel("<html><h1>YOU HAVE ENTERED THE DUNGEON!</h1><br>"+enemy+"<h1>has appeared.</h1><br><h2>What would you like to do?<br>1. ATTACK 2.RUN <br>Click on the either side of the screen.</h2></html>");
+    JLabel label3 = new JLabel("<html><h1>YOU HAVE ENTERED THE DUNGEON!</h1><br><h1>has appeared.</h1><br><h2>What would you like to do?<br>1. ATTACK 2.RUN <br>Click on the either side of the screen.</h2></html>");
     label3.setForeground(Color.WHITE);
     
 
