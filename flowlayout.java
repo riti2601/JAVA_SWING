@@ -19,15 +19,15 @@ public class flowlayout {
         panel.setBackground(Color.DARK_GRAY);
         panel.setLayout(new FlowLayout());
 
-        panel.add(new JButton("1"));
-        panel.add(new JButton("2"));
-        panel.add(new JButton("3"));
-        panel.add(new JButton("4"));
-        panel.add(new JButton("5"));
-        panel.add(new JButton("6"));
-        panel.add(new JButton("7"));
-        panel.add(new JButton("8"));
-        panel.add(new JButton("9"));
+        panel.add(new JButton("ONe"));
+        panel.add(new JButton("TWO"));
+        panel.add(new JButton("THREE"));
+        panel.add(new JButton("FOnnnnnnnnnnnnnnnnnUR"));
+        panel.add(new JButton("FIVE"));
+        panel.add(new JButton("SIX"));
+        panel.add(new JButton("SEVEN"));
+        panel.add(new JButton("EIGHT"));
+        panel.add(new JButton("NINE"));
         frame.add(panel);
         frame.setVisible(true);
     }
