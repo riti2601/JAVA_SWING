@@ -1,4 +1,4 @@
-package JAVA_SWING;
+//package JAVA_SWING;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
